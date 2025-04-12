@@ -4,31 +4,46 @@ import java.util.Scanner;
 
 public class LineComparasionComputation {
 	
-	//Method to find the Distance
-	 static double getDistance(int x1, int y1, int x2, int y2)//Function to calculate the distance
-     {
-         return Math.sqrt(((x2 - x1)*(x2 - x1)) + ((y2- y1)*(y2- y1)));//Formula
-     }
-	 
-	 
-	public static void main(String[] args) {
+	    // Main method
+	    public static void main(String[] args) {
+	    	
+	        // Displaying a welcome message
+	        System.out.println("Welcome to Line Comparison Computation");
+	        Scanner sc = new Scanner(System.in);
+	        
+	        // taking the user input for length 1
+	        System.out.println("Enter x1 coordinate : ");
+	        int x1 = sc.nextInt();
+	        System.out.println("Enter x2 coordinate: ");
+	        int x2 = sc.nextInt();
+	        System.out.println("Enter y1 coordinate : ");
+	        int y1 = sc.nextInt();
+	        System.out.println("Enter y2 coordinate : ");
+	        int y2 = sc.nextInt();
 
-		System.out.println("Welcome to Line Comparation Problem.");
-		
-		//Getting the Values From the user
-		 Scanner sc = new Scanner(System.in);
-         System.out.println("Enter First point x-coordinate, x1: ");
-         int x1 = sc.nextInt();
-         System.out.println("Enter First point y-coordinate, y1: ");
-         int y1 = sc.nextInt();
-         System.out.println("Enter Second point x-coordinate, x2: ");
-         int x2 = sc.nextInt();
-         System.out.println("Enter Second point y-coordinate y2: ");
-         int y2 = sc.nextInt();
+	        // taking the user input for length 2
+	        System.out.println("Enter a1 coordinate: ");
+	        int a1 = sc.nextInt();
+	        System.out.println("Enter a2 coordinate: ");
+	        int a2 = sc.nextInt();
+	        System.out.println("Enter b1 coordinate: ");
+	        int b1 = sc.nextInt();
+	        System.out.println("Enter b2 coordinate: ");
+	        int b2 = sc.nextInt();
 
-         // Displaying the Results..
-         System.out.println("Length of Line "+"("+x1+","+y1+")"+"  "+"("+x2+","+y2+")"+" is: "+ getDistance(x1, y1, x2, y2));
-		
-	}
-
+	        // Calculating the Length of Line One
+	        double lengthOfaLine1 = Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
+	        // Calculating the Length of Line two
+	        double lengthOfaLine2 = Math.sqrt(Math.pow((a2 - a1), 2) + Math.pow((b2 - b1), 2));
+	        System.out.println("The length of a line : " + lengthOfaLine1);
+	        
+	        //Comparing the Length of line 1 and line 2
+	        if (lengthOfaLine1 == lengthOfaLine2) {
+	            System.out.println("The given to lengths are equal");
+	        } else
+	            System.out.println("Not equal");
+	        
+	        //Closing the Scanner Object
+	        sc.close();
+	    }
 }
