@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class LineComparasionComputation {
 	
-	    // Main method
+	    //  Main method
 	    public static void main(String[] args) {
 	    	
 	        // Displaying a welcome message
@@ -31,19 +31,29 @@ public class LineComparasionComputation {
 	        System.out.println("Enter b2 coordinate: ");
 	        int b2 = sc.nextInt();
 
-	        // Calculating the Length of Line One
-	        double lengthOfaLine1 = Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
-	        // Calculating the Length of Line two
-	        double lengthOfaLine2 = Math.sqrt(Math.pow((a2 - a1), 2) + Math.pow((b2 - b1), 2));
-	        System.out.println("The length of a line : " + lengthOfaLine1);
-	        
-	        //Comparing the Length of line 1 and line 2
-	        if (lengthOfaLine1 == lengthOfaLine2) {
+	        // calculating the lengths
+	        Double lengthOfaLine1 = Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
+	        Double lengthOfaLine2 = Math.sqrt(Math.pow((a2 - a1), 2) + Math.pow((b2 - b1), 2));
+	        System.out.println("The length of a line 1 : " + lengthOfaLine1);
+	        System.out.println("The length of line 2 : " + lengthOfaLine2);
+	        // compare the two lengths using the equals method
+	        if (lengthOfaLine1.equals(lengthOfaLine2)) {
 	            System.out.println("The given to lengths are equal");
 	        } else
 	            System.out.println("Not equal");
-	        
-	        //Closing the Scanner Object
+
+	        // Using Java compareTo method to compare 2 Lengths is preferable.
+	        int comparisonResult = lengthOfaLine1.compareTo(lengthOfaLine2);
+	        System.out.println(comparisonResult);
+	        if (comparisonResult == 0) {
+	            System.out.println("Two lines are equal and results 0");
+	        } else if (comparisonResult > 0) {
+	            System.out.println("The line 1 is greater than the line 2");
+	        } else {
+	            System.out.println("The line 1 is shorter than the line 2");
+	        }
+
 	        sc.close();
 	    }
+
 }
